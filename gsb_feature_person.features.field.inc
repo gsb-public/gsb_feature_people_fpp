@@ -89,85 +89,6 @@ function gsb_feature_person_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-gsb_person-field_address'.
-  $fields['node-gsb_person-field_address'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_address',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'gsb_person',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 9,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_address',
-      'label' => 'Address',
-      'required' => 0,
-      'settings' => array(
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '8',
-      ),
-    ),
-  );
-
   // Exported field: 'node-gsb_person-field_affiliation_type'.
   $fields['node-gsb_person-field_affiliation_type'] = array(
     'field_config' => array(
@@ -235,7 +156,7 @@ function gsb_feature_person_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '16',
+        'weight' => '9',
       ),
     ),
   );
@@ -315,7 +236,7 @@ function gsb_feature_person_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '22',
+        'weight' => '15',
       ),
     ),
   );
@@ -395,7 +316,7 @@ function gsb_feature_person_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '11',
+        'weight' => '4',
       ),
     ),
   );
@@ -472,165 +393,7 @@ function gsb_feature_person_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '23',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-gsb_person-field_email'.
-  $fields['node-gsb_person-field_email'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_email',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'gsb_person',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 6,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_email',
-      'label' => 'Email',
-      'required' => 0,
-      'settings' => array(
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '7',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-gsb_person-field_fax'.
-  $fields['node-gsb_person-field_fax'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_fax',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'gsb_person',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 5,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_fax',
-      'label' => 'Fax',
-      'required' => 0,
-      'settings' => array(
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '6',
+        'weight' => '16',
       ),
     ),
   );
@@ -788,7 +551,7 @@ function gsb_feature_person_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '18',
+        'weight' => '11',
       ),
     ),
   );
@@ -815,14 +578,13 @@ function gsb_feature_person_field_default_fields() {
         ),
       ),
       'locked' => '0',
-      'module' => 'file',
+      'module' => 'image',
       'settings' => array(
-        'display_default' => 0,
-        'display_field' => 0,
+        'default_image' => 0,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
-      'type' => 'file',
+      'type' => 'image',
     ),
     'field_instance' => array(
       'bundle' => 'gsb_person',
@@ -831,10 +593,13 @@ function gsb_feature_person_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'file',
-          'settings' => array(),
-          'type' => 'file_default',
-          'weight' => 12,
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => '',
+          ),
+          'type' => 'image',
+          'weight' => 25,
         ),
         'featured' => array(
           'label' => 'above',
@@ -854,20 +619,25 @@ function gsb_feature_person_field_default_fields() {
       'label' => 'Headshot',
       'required' => 0,
       'settings' => array(
-        'description_field' => 0,
+        'alt_field' => 1,
+        'default_image' => 0,
         'file_directory' => '',
-        'file_extensions' => 'txt',
+        'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
+        'max_resolution' => '',
+        'min_resolution' => '',
+        'title_field' => 0,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'file',
+        'module' => 'image',
         'settings' => array(
+          'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'throbber',
         ),
-        'type' => 'file_generic',
-        'weight' => '13',
+        'type' => 'image_image',
+        'weight' => '6',
       ),
     ),
   );
@@ -951,164 +721,6 @@ function gsb_feature_person_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-gsb_person-field_mail_code'.
-  $fields['node-gsb_person-field_mail_code'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_mail_code',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'gsb_person',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 7,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_mail_code',
-      'label' => 'Mail Code',
-      'required' => 0,
-      'settings' => array(
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '9',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-gsb_person-field_mobile_phone'.
-  $fields['node-gsb_person-field_mobile_phone'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_mobile_phone',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'gsb_person',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 4,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_mobile_phone',
-      'label' => 'Mobile Phone',
-      'required' => 0,
-      'settings' => array(
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '5',
-      ),
-    ),
-  );
-
   // Exported field: 'node-gsb_person-field_office_hours'.
   $fields['node-gsb_person-field_office_hours'] = array(
     'field_config' => array(
@@ -1183,165 +795,7 @@ function gsb_feature_person_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '19',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-gsb_person-field_profile_image'.
-  $fields['node-gsb_person-field_profile_image'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_profile_image',
-      'foreign keys' => array(
-        'fid' => array(
-          'columns' => array(
-            'fid' => 'fid',
-          ),
-          'table' => 'file_managed',
-        ),
-      ),
-      'indexes' => array(
-        'fid' => array(
-          0 => 'fid',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'file',
-      'settings' => array(
-        'display_default' => 0,
-        'display_field' => 0,
-        'uri_scheme' => 'public',
-      ),
-      'translatable' => '0',
-      'type' => 'file',
-    ),
-    'field_instance' => array(
-      'bundle' => 'gsb_person',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'file',
-          'settings' => array(),
-          'type' => 'file_default',
-          'weight' => 13,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_profile_image',
-      'label' => 'Profile Image',
-      'required' => 0,
-      'settings' => array(
-        'description_field' => 0,
-        'file_directory' => '',
-        'file_extensions' => 'txt',
-        'max_filesize' => '',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'file',
-        'settings' => array(
-          'progress_indicator' => 'throbber',
-        ),
-        'type' => 'file_generic',
-        'weight' => '14',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-gsb_person-field_profile_image_caption'.
-  $fields['node-gsb_person-field_profile_image_caption'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_profile_image_caption',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'gsb_person',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 14,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_profile_image_caption',
-      'label' => 'Profile Image Caption',
-      'required' => 0,
-      'settings' => array(
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '15',
+        'weight' => '12',
       ),
     ),
   );
@@ -1421,7 +875,7 @@ function gsb_feature_person_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '12',
+        'weight' => '5',
       ),
     ),
   );
@@ -1498,7 +952,7 @@ function gsb_feature_person_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '25',
+        'weight' => '18',
       ),
     ),
   );
@@ -1575,84 +1029,7 @@ function gsb_feature_person_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '24',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-gsb_person-field_skills_expertise'.
-  $fields['node-gsb_person-field_skills_expertise'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_skills_expertise',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'text_long',
-    ),
-    'field_instance' => array(
-      'bundle' => 'gsb_person',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 8,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_skills_expertise',
-      'label' => 'Skills/Expertise',
-      'required' => 0,
-      'settings' => array(
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'rows' => '5',
-        ),
-        'type' => 'text_textarea',
-        'weight' => '10',
+        'weight' => '17',
       ),
     ),
   );
@@ -1723,7 +1100,7 @@ function gsb_feature_person_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '17',
+        'weight' => '10',
       ),
     ),
   );
@@ -1802,7 +1179,7 @@ function gsb_feature_person_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '21',
+        'weight' => '14',
       ),
     ),
   );
@@ -1881,117 +1258,29 @@ function gsb_feature_person_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '20',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-gsb_person-field_work_phone'.
-  $fields['node-gsb_person-field_work_phone'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_work_phone',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'gsb_person',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 3,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_work_phone',
-      'label' => 'Work Phone',
-      'required' => 0,
-      'settings' => array(
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '4',
+        'weight' => '13',
       ),
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Address');
   t('Affiliation Type');
   t('Body');
   t('Company');
   t('Department');
   t('Education');
-  t('Email');
-  t('Fax');
   t('First Name');
   t('Graduation Year');
   t('Headshot');
   t('Last Name');
-  t('Mail Code');
-  t('Mobile Phone');
   t('Office Hours');
-  t('Profile Image');
-  t('Profile Image Caption');
   t('Program');
   t('Quote');
   t('SUNetID');
   t('Short Bio');
-  t('Skills/Expertise');
   t('Student Type');
   t('URL');
-  t('Work Phone');
 
   return $fields;
 }

@@ -22,10 +22,10 @@ function gsb_feature_person_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '26',
+          'weight' => '19',
         ),
         'workbench_access' => array(
-          'weight' => '27',
+          'weight' => '20',
         ),
       ),
       'display' => array(),
