@@ -7,32 +7,27 @@
 include_once 'gsb_feature_person.features.inc';
 
 function gsb_feature_person_entity_info_alter(&$entity_info) {
-  $entity_info['fieldable_panels_pane']['bundles']['gsb_feature_person'] = array(
-    'label' => t('Person'),
-    'pane category' => t('GSB Person'),
+
+  $entity_info['fieldable_panels_pane']['bundles']['gsb_person_fpp'] = array(
+    'label' => t('Add Persons'),
+    'pane category' => t('GSB Person FPP'),
     'pane top level' => TRUE, // set to true to make this show as a top level icon
     'pane icon' => drupal_get_path('module', 'panopoly_widgets') . '/images/icon_text.png',
     'admin' => array(
       'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
       'bundle argument' => 4,
       // Note that this has all _ replaced with - from the bundle name.
-      'real path' => 'admin/structure/fieldable-panels-panes/manage/gsb-feature-person',
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/gsb-person-fpp',
       'access arguments' => array('administer fieldable panels panes'),
     ),
   );
-}
 
-function gsb_feature_person_preprocess_panels_pane(&$vars) {
-  $test = 'test';
-  //if ($vars['pane']->type == 'node_title') {
-    //$vars['template_files'][] = 'panels-pane-node-title';
-  //}
 }
 
 function gsb_feature_person_preprocess_fieldable_panels_pane(&$vars) {
 
-  $view_name = "test_view";
-  $display_id = "page";
+  $view_name = "gsb_person";
+  $display_id = "block_table";
 
   if (isset($vars['field_person_node_ref'])) {
 
@@ -58,7 +53,7 @@ function gsb_feature_person_preprocess_fieldable_panels_pane(&$vars) {
 
 function gsb_feature_person_views_pre_render(&$view) {
 
-  if ('test_view' == $view->name) {
+  if ('gsb_person' == $view->name) {
 
     $args = explode("+", $view->args[0]);
     
@@ -70,15 +65,12 @@ function gsb_feature_person_views_pre_render(&$view) {
 
     $ordered_results = array();
     foreach($args as $key => $value) {
-      $index = array_search($args[0], $result_ids);
+      $index = array_search($value, $result_ids);
       $ordered_results[] = $view->result[$index];
     }
 
     $view->result = $ordered_results;
 
-    $test = "test";
-
-    //$view->result = array_reverse($view->result);
   }
   
 }
