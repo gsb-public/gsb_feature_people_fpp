@@ -26,16 +26,28 @@ function gsb_feature_person_entity_info_alter(&$entity_info) {
 
 function gsb_feature_person_preprocess_fieldable_panels_pane(&$vars) {
 
+  if (isset($vars['elements']['#bundle']) && $vars['elements']['#bundle'] == "gsb_person_fpp") {
+  } else {
+    /* this is not the droid (fpp) we are looking for */
+    return;
+  }
+
   $view_name = "gsb_person";
   $display_id = "block_table";
 
-  if (isset($vars['field_person_node_ref'])) {
+  if (isset($vars['field_person_entity_ref'])) {
+
+    if (isset($vars['field_display_style'])) {
+      if ($vars['field_display_style'][0]['value'] == "1") {
+        $display_id = "block_unformatted";
+      }
+    }
 
     if ($view = views_get_view($view_name)) {
 
       $node_ids = array();
 
-      foreach ($vars['field_person_node_ref'] as $key => $value) {
+      foreach ($vars['field_person_entity_ref'] as $key => $value) {
         $node_ids[] = $value['entity']->nid;
       }
 
