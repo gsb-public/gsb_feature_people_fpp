@@ -4,3 +4,6 @@ core = 7.x
 projects[entity_view_mode][version] = 1.0-beta3
 projects[entity_view_mode][subdir] = contrib
 
+projects[auto_nodetitle][version] = 1.0
+projects[auto_nodetitle][subdir] = contrib
+
