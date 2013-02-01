@@ -214,7 +214,7 @@ function gsb_feature_person_field_default_fields() {
   $fields['fieldable_panels_pane-gsb_person_fpp-field_person_info'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_person_info',

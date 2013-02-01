@@ -1,5 +1,5 @@
 name = GSB Feature Person
-description = The feature for creating the GSB Person content type, the GSB Person fpp and view
+description = The feature for creating the GSB Person content type,  fpp, and view
 core = 7.x
 package = GSB
 php = 5.2.4
@@ -22,7 +22,7 @@ dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = views
-datestamp = 1359694360
+datestamp = 1359696026
 features[ctools][] = panelizer:panelizer:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0

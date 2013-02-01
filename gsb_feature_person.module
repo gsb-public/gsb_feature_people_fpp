@@ -49,6 +49,79 @@ function gsb_feature_person_preprocess_fieldable_panels_pane(&$vars) {
     $view->set_display($display_id);
     $vars['fields'] = $view->preview($display_id, $fpp_id);
 
+    $test = "test";
+
   }
 
+}
+
+function xxx_gsb_feature_person_preprocess_fieldable_panels_pane(&$vars) {
+
+  if (isset($vars['elements']['#bundle']) && $vars['elements']['#bundle'] == "gsb_person_fpp") {
+  } else {
+    /* this is not the droid (fpp) we are looking for */
+    return;
+  }
+
+  $view_name = "gsb_person";
+  $display_id = "block_table";
+
+  if (isset($vars['field_person_info'])) {
+
+    if (isset($vars['field_display_style'])) {
+      if ($vars['field_display_style'][0]['value'] == "1") {
+        $display_id = "block_unformatted";
+      }
+    }
+
+    if ($view = views_get_view($view_name)) {
+
+      $node_ids = array();
+
+      foreach ($vars['field_person_entity_ref'] as $key => $value) {
+        $node_ids[] = $value['entity']->nid;
+      }
+
+      $ids = implode("+", $node_ids);
+      $node_ids = array($ids);
+
+      $node_ids = array("2+3");
+
+      $view->set_display($display_id);
+      $vars['fields'] = $view->preview($display_id, $node_ids);
+
+      $test = "test";
+
+    }
+
+  }
+
+}
+
+function xxx_gsb_feature_person_views_pre_render(&$view) {
+
+  $test = "test";
+
+  /*
+  if ('gsb_person' == $view->name) {
+
+    $args = explode("+", $view->args[0]);
+    
+    $result_ids = array();
+
+    foreach($view->result as $key => $value) {
+      $result_ids[] = $value->nid;
+    }
+
+    $ordered_results = array();
+    foreach($args as $key => $value) {
+      $index = array_search($value, $result_ids);
+      $ordered_results[] = $view->result[$index];
+    }
+
+    $view->result = $ordered_results;
+
+  }
+  */
+  
 }
