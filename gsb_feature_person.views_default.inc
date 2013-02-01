@@ -61,6 +61,7 @@ function gsb_feature_person_views_default_views() {
     'description' => 1,
     'view_mode' => 'full',
   );
+  $handler->display->display_options['fields']['field_person_info']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_person_info']['delta_offset'] = '0';
   /* Contextual filter: Fieldable pane: Fieldable pane ID */
   $handler->display->display_options['arguments']['fpid']['id'] = 'fpid';
