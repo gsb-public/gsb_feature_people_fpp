@@ -210,6 +210,62 @@ function gsb_feature_person_field_default_fields() {
     ),
   );
 
+  // Exported field: 'fieldable_panels_pane-gsb_person_fpp-field_person_info'.
+  $fields['fieldable_panels_pane-gsb_person_fpp-field_person_info'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_person_info',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'field_collection',
+      'settings' => array(
+        'hide_blank_items' => 1,
+        'path' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'field_collection',
+    ),
+    'field_instance' => array(
+      'bundle' => 'gsb_person_fpp',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'field_collection',
+          'settings' => array(
+            'add' => 'Add',
+            'delete' => 'Delete',
+            'description' => TRUE,
+            'edit' => 'Edit',
+            'view_mode' => 'full',
+          ),
+          'type' => 'field_collection_view',
+          'weight' => 2,
+        ),
+      ),
+      'entity_type' => 'fieldable_panels_pane',
+      'field_name' => 'field_person_info',
+      'label' => 'Person Info',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'field_collection',
+        'settings' => array(),
+        'type' => 'field_collection_embed',
+        'weight' => '3',
+      ),
+    ),
+  );
+
   // Exported field: 'node-gsb_person-body'.
   $fields['node-gsb_person-body'] = array(
     'field_config' => array(
@@ -1318,6 +1374,7 @@ function gsb_feature_person_field_default_fields() {
   t('Last Name');
   t('Office Hours');
   t('Person Entity Ref');
+  t('Person Info');
   t('Quote');
   t('SUNetID');
   t('Short Bio');
