@@ -47,10 +47,10 @@ function gsb_feature_person_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '19',
+          'weight' => '16',
         ),
         'workbench_access' => array(
-          'weight' => '20',
+          'weight' => '17',
         ),
       ),
       'display' => array(),
