@@ -120,11 +120,8 @@ function gsb_feature_person_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'entityreference',
-          'settings' => array(
-            'links' => TRUE,
-            'view_mode' => '',
-          ),
-          'type' => 'entityreference_entity_view',
+          'settings' => array(),
+          'type' => 'entityreference_entity_id',
           'weight' => '0',
         ),
       ),
