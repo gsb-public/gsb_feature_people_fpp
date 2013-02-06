@@ -50,19 +50,24 @@ function gsb_feature_person_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Field: Fieldable panel pane: Person Info */
-  $handler->display->display_options['fields']['field_person_info']['id'] = 'field_person_info';
-  $handler->display->display_options['fields']['field_person_info']['table'] = 'field_data_field_person_info';
-  $handler->display->display_options['fields']['field_person_info']['field'] = 'field_person_info';
-  $handler->display->display_options['fields']['field_person_info']['settings'] = array(
-    'edit' => 'Edit',
-    'delete' => 'Delete',
-    'add' => 'Add',
-    'description' => 1,
-    'view_mode' => 'full',
+  /* Relationship: Fieldable panel pane: Person Info (field_person_info) */
+  $handler->display->display_options['relationships']['field_person_info_value']['id'] = 'field_person_info_value';
+  $handler->display->display_options['relationships']['field_person_info_value']['table'] = 'field_data_field_person_info';
+  $handler->display->display_options['relationships']['field_person_info_value']['field'] = 'field_person_info_value';
+  $handler->display->display_options['relationships']['field_person_info_value']['delta'] = '-1';
+  /* Field: Field collection item: Person Entity Ref */
+  $handler->display->display_options['fields']['field_person_entity_ref']['id'] = 'field_person_entity_ref';
+  $handler->display->display_options['fields']['field_person_entity_ref']['table'] = 'field_data_field_person_entity_ref';
+  $handler->display->display_options['fields']['field_person_entity_ref']['field'] = 'field_person_entity_ref';
+  $handler->display->display_options['fields']['field_person_entity_ref']['relationship'] = 'field_person_info_value';
+  $handler->display->display_options['fields']['field_person_entity_ref']['settings'] = array(
+    'link' => 0,
   );
-  $handler->display->display_options['fields']['field_person_info']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_person_info']['delta_offset'] = '0';
+  /* Field: Field collection item: Description */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['relationship'] = 'field_person_info_value';
   /* Contextual filter: Fieldable pane: Fieldable pane ID */
   $handler->display->display_options['arguments']['fpid']['id'] = 'fpid';
   $handler->display->display_options['arguments']['fpid']['table'] = 'fieldable_panels_panes';
