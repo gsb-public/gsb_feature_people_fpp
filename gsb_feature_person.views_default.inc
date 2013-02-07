@@ -30,26 +30,8 @@ function gsb_feature_person_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'fpid' => 'fpid',
-    'field_person_info' => 'field_person_info',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'fpid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_person_info' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Fieldable panel pane: Person Info (field_person_info) */
   $handler->display->display_options['relationships']['field_person_info_value']['id'] = 'field_person_info_value';
   $handler->display->display_options['relationships']['field_person_info_value']['table'] = 'field_data_field_person_info';
@@ -84,8 +66,8 @@ function gsb_feature_person_views_default_views() {
     'gsb_person_fpp' => 'gsb_person_fpp',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_unformatted');
+  /* Display: Grid */
+  $handler = $view->new_display('block', 'Grid', 'grid');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -97,8 +79,8 @@ function gsb_feature_person_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_table');
+  /* Display: List */
+  $handler = $view->new_display('block', 'List', 'list');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $export['gsb_person_fpp_view'] = $view;
 

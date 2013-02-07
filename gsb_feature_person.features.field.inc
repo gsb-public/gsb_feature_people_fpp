@@ -164,19 +164,19 @@ function gsb_feature_person_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'Table',
-          1 => 'Unformatted',
+          'person-list-view' => 'List',
+          'person-grid-view' => 'Grid',
         ),
         'allowed_values_function' => '',
       ),
       'translatable' => '0',
-      'type' => 'list_integer',
+      'type' => 'list_text',
     ),
     'field_instance' => array(
       'bundle' => 'gsb_person_fpp',
       'default_value' => array(
         0 => array(
-          'value' => '0',
+          'value' => 'person-list-view',
         ),
       ),
       'deleted' => '0',
@@ -187,7 +187,7 @@ function gsb_feature_person_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 1,
+          'weight' => 3,
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
@@ -202,7 +202,7 @@ function gsb_feature_person_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '2',
+        'weight' => '1',
       ),
     ),
   );
@@ -258,7 +258,7 @@ function gsb_feature_person_field_default_fields() {
         'module' => 'field_collection',
         'settings' => array(),
         'type' => 'field_collection_embed',
-        'weight' => '3',
+        'weight' => '2',
       ),
     ),
   );
