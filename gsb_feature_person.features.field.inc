@@ -50,6 +50,12 @@ function gsb_feature_person_field_default_fields() {
           'type' => 'text_default',
           'weight' => '1',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'field_collection_item',
       'field_name' => 'field_description',
@@ -124,6 +130,12 @@ function gsb_feature_person_field_default_fields() {
           'type' => 'entityreference_entity_id',
           'weight' => '0',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'field_collection_item',
       'field_name' => 'field_person_entity_ref',
@@ -189,6 +201,12 @@ function gsb_feature_person_field_default_fields() {
           'type' => 'list_default',
           'weight' => 3,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'fieldable_panels_pane',
       'field_name' => 'field_display_style',
@@ -244,6 +262,12 @@ function gsb_feature_person_field_default_fields() {
           ),
           'type' => 'field_collection_view',
           'weight' => 2,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
@@ -310,6 +334,12 @@ function gsb_feature_person_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '14',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -387,6 +417,12 @@ function gsb_feature_person_field_default_fields() {
           'type' => 'hidden',
           'weight' => '11',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -463,6 +499,12 @@ function gsb_feature_person_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '10',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -544,6 +586,12 @@ function gsb_feature_person_field_default_fields() {
           'type' => 'hidden',
           'weight' => '12',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'module' => 'taxonomy',
@@ -617,6 +665,12 @@ function gsb_feature_person_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '13',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -697,6 +751,12 @@ function gsb_feature_person_field_default_fields() {
           'settings' => array(),
           'type' => 'text_plain',
           'weight' => '2',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -784,6 +844,12 @@ function gsb_feature_person_field_default_fields() {
           ),
           'type' => 'image',
           'weight' => '1',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -873,6 +939,12 @@ function gsb_feature_person_field_default_fields() {
           'type' => 'text_plain',
           'weight' => '3',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'module' => 'text',
@@ -952,6 +1024,12 @@ function gsb_feature_person_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '5',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1033,6 +1111,12 @@ function gsb_feature_person_field_default_fields() {
           'type' => 'text_plain',
           'weight' => '0',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1110,6 +1194,12 @@ function gsb_feature_person_field_default_fields() {
           'type' => 'hidden',
           'weight' => '4',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1186,6 +1276,12 @@ function gsb_feature_person_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '6',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1265,6 +1361,12 @@ function gsb_feature_person_field_default_fields() {
           'type' => 'hidden',
           'weight' => '7',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1336,6 +1438,12 @@ function gsb_feature_person_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '9',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1415,6 +1523,12 @@ function gsb_feature_person_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '8',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',

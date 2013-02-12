@@ -54,6 +54,7 @@ function gsb_feature_person_views_default_views() {
   $handler->display->display_options['arguments']['fpid']['id'] = 'fpid';
   $handler->display->display_options['arguments']['fpid']['table'] = 'fieldable_panels_panes';
   $handler->display->display_options['arguments']['fpid']['field'] = 'fpid';
+  $handler->display->display_options['arguments']['fpid']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['fpid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['fpid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['fpid']['summary']['format'] = 'default_summary';
