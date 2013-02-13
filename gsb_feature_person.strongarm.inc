@@ -65,13 +65,13 @@ function gsb_feature_person_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '18',
         ),
         'path' => array(
-          'weight' => '17',
+          'weight' => '15',
         ),
         'workbench_access' => array(
-          'weight' => '18',
+          'weight' => '16',
         ),
       ),
       'display' => array(),
