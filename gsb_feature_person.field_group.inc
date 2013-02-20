@@ -21,7 +21,7 @@ function gsb_feature_person_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Alumni Fields',
-    'weight' => '23',
+    'weight' => '25',
     'children' => array(
       0 => 'field_alumni_temp_field_1',
       1 => 'field_alumni_temp_field_2',
@@ -49,7 +49,7 @@ function gsb_feature_person_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Faculty Fields',
-    'weight' => '21',
+    'weight' => '25',
     'children' => array(
       0 => 'field_faculty_temp_field_1',
       1 => 'field_faculty_temp_field_2',
