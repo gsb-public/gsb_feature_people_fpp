@@ -59,8 +59,12 @@ function gsb_feature_person_preprocess_fieldable_panels_pane(&$vars) {
  */
 function gsb_feature_person_field_group_build_pre_render_alter(&$element) {
 
-  $element['group_faculty_fields']['#states']['visible'][':input[name="field_affiliation_type[und][Faculty]"]'] = array(
-    array('checked' => TRUE),
-  );
+  if (isset($element['#id']) && $element['#id'] == 'gsb-person-node-form') {
+
+    $element['group_faculty_fields']['#states']['visible'][':input[name="field_affiliation_type[und][Faculty]"]'] = array(
+      array('checked' => TRUE),
+    );
+    
+  }
 
 }
