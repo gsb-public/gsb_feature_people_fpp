@@ -1,4 +1,5 @@
-gsb_feature_person_display
+gsb_feature_people_fpp
 ==================
 
-This module (feature) creates the gsb "Person" views.
+This module (feature) creates the gsb "people" views.
+=======
