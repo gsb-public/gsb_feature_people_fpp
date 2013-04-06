@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * gsb_feature_person_display.features.field.inc
+ * gsb_feature_people_fpp.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function gsb_feature_person_display_field_default_fields() {
+function gsb_feature_people_fpp_field_default_fields() {
   $fields = array();
 
   // Exported field: 'field_collection_item-field_person_description-field_body'.

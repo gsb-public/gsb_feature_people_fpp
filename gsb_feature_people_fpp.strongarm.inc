@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * gsb_feature_person_display.strongarm.inc
+ * gsb_feature_people_fpp.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function gsb_feature_person_display_strongarm() {
+function gsb_feature_people_fpp_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

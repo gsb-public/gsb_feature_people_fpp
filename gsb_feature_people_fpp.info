@@ -1,10 +1,10 @@
-name = GSB Feature Person Display
+name = GSB Feature People FPP
 description = The feature for creating the GSB Person fpp and view
 core = 7.x
 package = GSB
 php = 5.2.4
 version = 7.x-1.0
-project = gsb_feature_person_display
+project = gsb_feature_people_fpp
 dependencies[] = ctools
 dependencies[] = entity_view_mode
 dependencies[] = entityreference

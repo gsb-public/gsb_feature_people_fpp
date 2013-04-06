@@ -4,9 +4,9 @@
  * Code for the GSB Feature Person Display feature.
  */
 
-include_once 'gsb_feature_person_display.features.inc';
+include_once 'gsb_feature_people_fpp.features.inc';
 
-function gsb_feature_person_display_entity_info_alter(&$entity_info) {
+function gsb_feature_people_fpp_entity_info_alter(&$entity_info) {
 
   $entity_info['fieldable_panels_pane']['bundles']['people'] = array(
     'label' => t('people'),
@@ -24,7 +24,7 @@ function gsb_feature_person_display_entity_info_alter(&$entity_info) {
 
 }
 
-function gsb_feature_person_display_preprocess_fieldable_panels_pane(&$vars) {
+function gsb_feature_people_fpp_preprocess_fieldable_panels_pane(&$vars) {
 
   if (isset($vars['elements']['#bundle']) && $vars['elements']['#bundle'] == "people") {
   } else {

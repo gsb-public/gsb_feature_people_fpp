@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * gsb_feature_person_display.views_default.inc
+ * gsb_feature_people_fpp.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function gsb_feature_person_display_views_default_views() {
+function gsb_feature_people_fpp_views_default_views() {
   $export = array();
 
   $view = new view();
