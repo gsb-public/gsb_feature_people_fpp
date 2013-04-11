@@ -54,7 +54,7 @@ function gsb_feature_people_fpp_views_default_views() {
       ),
     ),
   );
-  /* Field: Field: Body */
+  /* Field: Field: Description */
   $handler->display->display_options['fields']['field_body']['id'] = 'field_body';
   $handler->display->display_options['fields']['field_body']['table'] = 'field_data_field_body';
   $handler->display->display_options['fields']['field_body']['field'] = 'field_body';
@@ -102,6 +102,14 @@ function gsb_feature_people_fpp_views_default_views() {
   /* Display: List */
   $handler = $view->new_display('block', 'List', 'list');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+
+  /* Display: EVA Field */
+  $handler = $view->new_display('entity_view', 'EVA Field', 'entity_view_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['entity_type'] = 'fieldable_panels_pane';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'people',
+  );
   $export['people_fpp_view'] = $view;
 
   return $export;

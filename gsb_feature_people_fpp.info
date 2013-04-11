@@ -8,6 +8,7 @@ project = gsb_feature_people_fpp
 dependencies[] = ctools
 dependencies[] = entity_view_mode
 dependencies[] = entityreference
+dependencies[] = eva
 dependencies[] = features
 dependencies[] = field_collection
 dependencies[] = list

@@ -192,7 +192,7 @@ function gsb_feature_people_fpp_field_default_fields() {
   $fields['fieldable_panels_pane-people-field_person_description'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_person_description',
@@ -215,17 +215,9 @@ function gsb_feature_people_fpp_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'field_collection',
-          'settings' => array(
-            'add' => 'Add',
-            'conditions' => array(),
-            'delete' => 'Delete',
-            'description' => TRUE,
-            'edit' => 'Edit',
-            'view_mode' => 'full',
-          ),
-          'type' => 'field_collection_view',
-          'weight' => 0,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
         ),
         'ical' => array(
           'label' => 'above',
@@ -298,7 +290,7 @@ function gsb_feature_people_fpp_field_default_fields() {
             'conditions' => array(),
           ),
           'type' => 'list_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'ical' => array(
           'label' => 'above',
