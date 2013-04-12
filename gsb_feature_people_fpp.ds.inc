@@ -30,6 +30,19 @@ function gsb_feature_people_fpp_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_person_ref' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
   );
   $export['field_collection_item|field_person_description|default'] = $ds_fieldsetting;
 
@@ -63,24 +76,21 @@ function gsb_feature_people_fpp_ds_layout_settings_info() {
   $ds_layout->entity_type = 'field_collection_item';
   $ds_layout->bundle = 'field_person_description';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_2col';
+  $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'regions' => array(
-      'left' => array(
+      'ds_content' => array(
         0 => 'field_person_ref',
-      ),
-      'right' => array(
         1 => 'field_body',
       ),
     ),
     'fields' => array(
-      'field_person_ref' => 'left',
-      'field_body' => 'right',
+      'field_person_ref' => 'ds_content',
+      'field_body' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'left' => 'div',
-      'right' => 'div',
+      'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
