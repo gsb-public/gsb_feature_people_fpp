@@ -98,11 +98,13 @@ function gsb_feature_people_fpp_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_person_description',
-        1 => 'people_fpp_view_entity_view_1',
+        0 => 'field_title',
+        1 => 'field_person_description',
+        2 => 'people_fpp_view_entity_view_1',
       ),
     ),
     'fields' => array(
+      'field_title' => 'ds_content',
       'field_person_description' => 'ds_content',
       'people_fpp_view_entity_view_1' => 'ds_content',
     ),
