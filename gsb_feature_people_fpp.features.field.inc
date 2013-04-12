@@ -44,13 +44,13 @@ function gsb_feature_people_fpp_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
             'conditions' => array(),
           ),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'ical' => array(
           'label' => 'above',
@@ -137,14 +137,15 @@ function gsb_feature_people_fpp_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'entityreference',
           'settings' => array(
             'conditions' => array(),
-            'link' => FALSE,
+            'links' => 0,
+            'view_mode' => 'teaser',
           ),
-          'type' => 'entityreference_label',
-          'weight' => 0,
+          'type' => 'entityreference_entity_view',
+          'weight' => '0',
         ),
         'ical' => array(
           'label' => 'above',
@@ -214,9 +215,13 @@ function gsb_feature_people_fpp_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
+          'label' => 'hidden',
+          'module' => 'field_collection',
+          'settings' => array(
+            'conditions' => array(),
+            'view_mode' => 'full',
+          ),
+          'type' => 'field_collection_fields',
           'weight' => '0',
         ),
         'ical' => array(
@@ -241,7 +246,7 @@ function gsb_feature_people_fpp_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'field_collection_embed',
-        'weight' => '2',
+        'weight' => '1',
       ),
       'workbench_access_field' => 0,
     ),
@@ -284,13 +289,10 @@ function gsb_feature_people_fpp_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'list_default',
-          'weight' => '1',
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
         ),
         'ical' => array(
           'label' => 'above',
@@ -314,7 +316,7 @@ function gsb_feature_people_fpp_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '1',
+        'weight' => '2',
       ),
       'workbench_access_field' => 0,
     ),

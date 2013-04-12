@@ -15,7 +15,23 @@ function gsb_feature_people_fpp_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_fieldable_panels_pane__people';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'ical' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'megamenu' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
@@ -25,14 +41,14 @@ function gsb_feature_people_fpp_strongarm() {
       'display' => array(
         'people_fpp_view_entity_view_1' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '1',
             'visible' => TRUE,
           ),
         ),
         'title' => array(
           'default' => array(
-            'weight' => '-5',
-            'visible' => TRUE,
+            'weight' => '2',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -45,7 +61,23 @@ function gsb_feature_people_fpp_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_field_collection_item__field_person_description';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'ical' => array(
+        'custom_settings' => TRUE,
+      ),
+      'tiny' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(),
       'display' => array(),

@@ -39,29 +39,17 @@ function gsb_feature_people_fpp_views_default_views() {
   $handler->display->display_options['relationships']['field_person_description_value']['table'] = 'field_data_field_person_description';
   $handler->display->display_options['relationships']['field_person_description_value']['field'] = 'field_person_description_value';
   $handler->display->display_options['relationships']['field_person_description_value']['delta'] = '-1';
-  /* Field: Field collection item: Person */
+  /* Field: Field collection item: Speaker */
   $handler->display->display_options['fields']['field_person_ref']['id'] = 'field_person_ref';
   $handler->display->display_options['fields']['field_person_ref']['table'] = 'field_data_field_person_ref';
   $handler->display->display_options['fields']['field_person_ref']['field'] = 'field_person_ref';
   $handler->display->display_options['fields']['field_person_ref']['relationship'] = 'field_person_description_value';
   $handler->display->display_options['fields']['field_person_ref']['label'] = '';
   $handler->display->display_options['fields']['field_person_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_ref']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_person_ref']['settings'] = array(
-    'link' => 0,
-    'conditions' => array(
-      0 => array(
-        'condition' => '',
-      ),
-    ),
-  );
-  /* Field: Field: Description */
-  $handler->display->display_options['fields']['field_body']['id'] = 'field_body';
-  $handler->display->display_options['fields']['field_body']['table'] = 'field_data_field_body';
-  $handler->display->display_options['fields']['field_body']['field'] = 'field_body';
-  $handler->display->display_options['fields']['field_body']['relationship'] = 'field_person_description_value';
-  $handler->display->display_options['fields']['field_body']['label'] = '';
-  $handler->display->display_options['fields']['field_body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_body']['settings'] = array(
+    'view_mode' => 'teaser',
+    'links' => 1,
     'conditions' => array(
       0 => array(
         'condition' => '',
@@ -102,6 +90,24 @@ function gsb_feature_people_fpp_views_default_views() {
   /* Display: List */
   $handler = $view->new_display('block', 'List', 'list');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field collection item: Speaker */
+  $handler->display->display_options['fields']['field_person_ref']['id'] = 'field_person_ref';
+  $handler->display->display_options['fields']['field_person_ref']['table'] = 'field_data_field_person_ref';
+  $handler->display->display_options['fields']['field_person_ref']['field'] = 'field_person_ref';
+  $handler->display->display_options['fields']['field_person_ref']['relationship'] = 'field_person_description_value';
+  $handler->display->display_options['fields']['field_person_ref']['label'] = '';
+  $handler->display->display_options['fields']['field_person_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_ref']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_person_ref']['settings'] = array(
+    'view_mode' => 'teaser',
+    'links' => 1,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
 
   /* Display: EVA Field */
   $handler = $view->new_display('entity_view', 'EVA Field', 'entity_view_1');
