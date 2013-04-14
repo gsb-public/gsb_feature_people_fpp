@@ -7,7 +7,6 @@ version = 7.x-1.0
 project = gsb_feature_people_fpp
 dependencies[] = ctools
 dependencies[] = ds
-dependencies[] = entity_view_mode
 dependencies[] = entityreference
 dependencies[] = eva
 dependencies[] = features
