@@ -75,6 +75,8 @@ function gsb_feature_people_fpp_views_default_views() {
 
   /* Display: EVA Field - List */
   $handler = $view->new_display('entity_view', 'EVA Field - List', 'entity_view_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'people-list';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field collection item: Speaker */
@@ -117,6 +119,8 @@ function gsb_feature_people_fpp_views_default_views() {
 
   /* Display: EVA Field - Grid */
   $handler = $view->new_display('entity_view', 'EVA Field - Grid', 'entity_view_2');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'people-grid';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'grid';
