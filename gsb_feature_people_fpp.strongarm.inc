@@ -31,6 +31,9 @@ function gsb_feature_people_fpp_strongarm() {
       'megamenu' => array(
         'custom_settings' => FALSE,
       ),
+      'people_fpp' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -41,7 +44,7 @@ function gsb_feature_people_fpp_strongarm() {
       'display' => array(
         'people_fpp_view_entity_view_1' => array(
           'default' => array(
-            'weight' => '2',
+            'weight' => '1',
             'visible' => TRUE,
           ),
         ),
@@ -49,6 +52,12 @@ function gsb_feature_people_fpp_strongarm() {
           'default' => array(
             'weight' => '3',
             'visible' => FALSE,
+          ),
+        ),
+        'people_fpp_view_entity_view_2' => array(
+          'default' => array(
+            'weight' => '2',
+            'visible' => TRUE,
           ),
         ),
       ),
@@ -75,6 +84,12 @@ function gsb_feature_people_fpp_strongarm() {
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'research_pager' => array(
+        'custom_settings' => TRUE,
+      ),
+      'people_fpp' => array(
         'custom_settings' => FALSE,
       ),
     ),

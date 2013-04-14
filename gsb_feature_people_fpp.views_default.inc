@@ -49,7 +49,7 @@ function gsb_feature_people_fpp_views_default_views() {
   $handler->display->display_options['fields']['field_person_ref']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_person_ref']['settings'] = array(
     'view_mode' => 'teaser',
-    'links' => 1,
+    'links' => 0,
     'conditions' => array(
       0 => array(
         'condition' => '',
@@ -73,22 +73,8 @@ function gsb_feature_people_fpp_views_default_views() {
     'people' => 'people',
   );
 
-  /* Display: Grid */
-  $handler = $view->new_display('block', 'Grid', 'grid');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-
-  /* Display: List */
-  $handler = $view->new_display('block', 'List', 'list');
+  /* Display: EVA Field - List */
+  $handler = $view->new_display('entity_view', 'EVA Field - List', 'entity_view_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field collection item: Speaker */
@@ -100,18 +86,63 @@ function gsb_feature_people_fpp_views_default_views() {
   $handler->display->display_options['fields']['field_person_ref']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_ref']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_person_ref']['settings'] = array(
-    'view_mode' => 'teaser',
-    'links' => 1,
+    'view_mode' => 'people_fpp',
+    'links' => 0,
     'conditions' => array(
       0 => array(
         'condition' => '',
       ),
     ),
   );
+  /* Field: Field: Body */
+  $handler->display->display_options['fields']['field_body']['id'] = 'field_body';
+  $handler->display->display_options['fields']['field_body']['table'] = 'field_data_field_body';
+  $handler->display->display_options['fields']['field_body']['field'] = 'field_body';
+  $handler->display->display_options['fields']['field_body']['relationship'] = 'field_person_description_value';
+  $handler->display->display_options['fields']['field_body']['label'] = '';
+  $handler->display->display_options['fields']['field_body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_body']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['field_body']['settings'] = array(
+    'trim_length' => '600',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['entity_type'] = 'fieldable_panels_pane';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'people',
+  );
 
-  /* Display: EVA Field */
-  $handler = $view->new_display('entity_view', 'EVA Field', 'entity_view_1');
+  /* Display: EVA Field - Grid */
+  $handler = $view->new_display('entity_view', 'EVA Field - Grid', 'entity_view_2');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field collection item: Speaker */
+  $handler->display->display_options['fields']['field_person_ref']['id'] = 'field_person_ref';
+  $handler->display->display_options['fields']['field_person_ref']['table'] = 'field_data_field_person_ref';
+  $handler->display->display_options['fields']['field_person_ref']['field'] = 'field_person_ref';
+  $handler->display->display_options['fields']['field_person_ref']['relationship'] = 'field_person_description_value';
+  $handler->display->display_options['fields']['field_person_ref']['label'] = '';
+  $handler->display->display_options['fields']['field_person_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_ref']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_person_ref']['settings'] = array(
+    'view_mode' => 'teaser',
+    'links' => 0,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['entity_type'] = 'fieldable_panels_pane';
   $handler->display->display_options['bundles'] = array(
     0 => 'people',
