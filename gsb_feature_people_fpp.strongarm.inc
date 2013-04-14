@@ -60,6 +60,18 @@ function gsb_feature_people_fpp_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'people_fpp_view_list' => array(
+          'default' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+        ),
+        'people_fpp_view_grid' => array(
+          'default' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );

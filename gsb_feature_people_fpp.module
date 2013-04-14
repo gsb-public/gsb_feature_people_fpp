@@ -24,31 +24,18 @@ function gsb_feature_people_fpp_entity_info_alter(&$entity_info) {
 
 }
 
-function gsb_feature_people_fpp_preprocess_fieldable_panels_pane(&$vars) {
-
-  if (isset($vars['elements']['#bundle']) && $vars['elements']['#bundle'] == "people") {
-  } else {
-    /* this is not the droid (fpp) we are looking for */
+/**
+ * Implements hook_fieldable_panels_pane_view_alter().
+ */
+function gsb_feature_people_fpp_fieldable_panels_pane_view_alter(&$build, $entity_type) {
+  $wrapper = entity_metadata_wrapper($entity_type, $build["#$entity_type"]);
+  if ($wrapper->getBundle() != 'people') {
     return;
   }
 
-  $view_name = "people_fpp_view";
-  $display_id = "list";
-
-  $fpp_id = $vars['elements']['#element']->fpid;
-
-  if (isset($vars['elements']['#element'])) {
-    $id = $vars['elements']['#element']->field_display_style['und'][0]['value'];
-    if ($id == "person-grid-view") {
-      $display_id = "grid";
-    }
+  // Hide the view that wasn't chosen in the UI.
+  $show = $wrapper->field_persons_display_style->value();
+  foreach (array('people_fpp_view_list', 'people_fpp_view_grid') as $view) {
+    $build[$view]['#access'] = ($view == $show);
   }
-
-  if ($view = views_get_view($view_name)) {
-
-    $view->set_display($display_id);
-    $vars['fields'] = $view->preview($display_id, array($fpp_id));
-
-  }
-
 }
