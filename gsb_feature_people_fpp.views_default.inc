@@ -102,7 +102,10 @@ function gsb_feature_people_fpp_views_default_views() {
   $handler->display->display_options['fields']['field_body']['field'] = 'field_body';
   $handler->display->display_options['fields']['field_body']['relationship'] = 'field_person_description_value';
   $handler->display->display_options['fields']['field_body']['label'] = '';
+  $handler->display->display_options['fields']['field_body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_body']['element_class'] = 'person-quote';
   $handler->display->display_options['fields']['field_body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_body']['type'] = 'text_trimmed';
   $handler->display->display_options['fields']['field_body']['settings'] = array(
     'trim_length' => '600',
