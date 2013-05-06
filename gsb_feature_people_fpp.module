@@ -35,7 +35,11 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view_alter(&$build, $entit
 
   // Hide the view that wasn't chosen in the UI.
   $show = $wrapper->field_persons_display_style->value();
-  foreach (array('people_fpp_view_list', 'people_fpp_view_grid') as $view) {
-    $build[$view]['#access'] = ($view == $show);
+  $map = array(
+    'person-list-view' => 'people_fpp_view_list',
+    'person-grid-view' => 'people_fpp_view_grid',
+  );
+  foreach ($map as $key => $view) {
+    $build[$view]['#access'] = ($key == $show);
   }
 }
