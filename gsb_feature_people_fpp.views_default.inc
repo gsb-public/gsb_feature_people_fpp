@@ -94,7 +94,7 @@ function gsb_feature_people_fpp_views_default_views() {
       ),
     ),
   );
-  /* Field: Field: Description */
+  /* Field: Field: Body */
   $handler->display->display_options['fields']['field_body']['id'] = 'field_body';
   $handler->display->display_options['fields']['field_body']['table'] = 'field_data_field_body';
   $handler->display->display_options['fields']['field_body']['field'] = 'field_body';
