@@ -18,6 +18,7 @@ dependencies[] = panopoly_core
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = views
+dependencies[] = views_responsive_grid
 datestamp = 1365267293
 features[ctools][] = ds:ds:1
 features[ctools][] = strongarm:strongarm:1

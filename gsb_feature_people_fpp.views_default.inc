@@ -94,7 +94,7 @@ function gsb_feature_people_fpp_views_default_views() {
       ),
     ),
   );
-  /* Field: Field: Body */
+  /* Field: Field: Description */
   $handler->display->display_options['fields']['field_body']['id'] = 'field_body';
   $handler->display->display_options['fields']['field_body']['table'] = 'field_data_field_body';
   $handler->display->display_options['fields']['field_body']['field'] = 'field_body';
@@ -120,7 +120,16 @@ function gsb_feature_people_fpp_views_default_views() {
 
   /* Display: EVA Field - Grid */
   $handler = $view->new_display('entity_view', 'EVA Field - Grid', 'grid');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'person-grid-view';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'responsive_grid';
+  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field collection item: Speaker */
   $handler->display->display_options['fields']['field_person_ref']['id'] = 'field_person_ref';
