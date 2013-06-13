@@ -38,7 +38,7 @@ function gsb_feature_people_fpp_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '10',
+          'weight' => '-7',
         ),
       ),
       'display' => array(
