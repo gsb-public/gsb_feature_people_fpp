@@ -140,7 +140,7 @@ function gsb_feature_people_fpp_views_default_views() {
   $handler->display->display_options['fields']['field_person_ref']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_ref']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_person_ref']['settings'] = array(
-    'view_mode' => 'teaser',
+    'view_mode' => 'people_fpp',
     'links' => 0,
     'conditions' => array(
       0 => array(
