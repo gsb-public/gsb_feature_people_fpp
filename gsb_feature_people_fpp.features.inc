@@ -7,12 +7,10 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function gsb_feature_people_fpp_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function gsb_feature_people_fpp_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -21,6 +19,6 @@ function gsb_feature_people_fpp_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function gsb_feature_people_fpp_views_api() {
+function gsb_feature_people_fpp_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
