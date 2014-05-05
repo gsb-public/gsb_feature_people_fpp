@@ -63,3 +63,54 @@ function gsb_feature_people_fpp_preprocess_fieldable_panels_pane(&$variables) {
     watchdog('gsb_feature_image_cta_fpp', 'In @function on line @line: "@message"', array('@function' => __FUNCTION__, '@line' => __LINE__, '@message' => $e->getMessage()), WATCHDOG_ERROR);
   }
 }
+
+/**
+ * Implements hook_preprocess_entity().
+ *   - Preprocess field_person_description Field Collection used in People FPP.
+ */
+function gsb_feature_people_fpp_preprocess_entity(&$variables) {
+  if ($variables['entity_type'] == 'field_collection_item' && $variables['field_collection_item']->field_name == 'field_person_description') {
+    $fc_wrapper = entity_metadata_wrapper('field_collection_item', $variables['field_collection_item']);
+    $person_wrapper = entity_metadata_wrapper('node', $variables['field_person_ref'][0]['entity']);
+    $person_content = reset($variables['content']['field_person_ref'][0]['node']);
+
+    // Get visibility fields.
+    $display_fields = $fc_wrapper->field_person_fields_visibility->value();
+    // For each field to display, set a variable to TRUE.
+    foreach ($display_fields as $display_field) {
+      $variables[_gsb_feature_people_fpp_visibility_var_keys($display_field)] = TRUE;
+    }
+    // For hidden fields set a variable to FALSE.
+    $visibility_field = field_info_field('field_person_fields_visibility');
+    $display_defaults = array_fill_keys(array_map(
+      '_gsb_feature_people_fpp_visibility_var_keys',
+      array_keys($visibility_field['settings']['allowed_values'])
+    ), FALSE);
+    $variables += $display_defaults;
+
+    // Taken from the entity reference
+    $variables['name'] = $person_content['title'];
+    $variables['photo'] = $person_content['field_image_single_public'];
+    $variables['phone'] = check_plain($person_wrapper->field_phone->value());
+    //This is the link to the email form coming from the email field. Not the actual email address.
+    $variables['email'] = check_plain($person_wrapper->field_email->value());;
+
+    $variables['rank'] = check_plain($person_wrapper->field_rank->value());
+    if ($person_wrapper->field_academic_area_single->value()) {
+      $variables['academic_area'] = $person_wrapper->field_academic_area_single->view();
+    }
+
+    // Taken from the fpp default values
+    $variables['program'] = $variables['content']['field_person_title'];
+    $variables['summary'] = $variables['content']['field_body'];
+  }
+}
+
+/**
+ * Helper to convert visibility field keys to template variable names.
+ * @param $value
+ * @return string
+ */
+function _gsb_feature_people_fpp_visibility_var_keys($value) {
+  return 'use_' . str_replace(' ', '_', $value);
+}

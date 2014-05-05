@@ -81,11 +81,13 @@ function gsb_feature_people_fpp_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_person_ref',
-        1 => 'field_body',
+        1 => 'field_person_title',
+        2 => 'field_body',
       ),
     ),
     'fields' => array(
       'field_person_ref' => 'ds_content',
+      'field_person_title' => 'ds_content',
       'field_body' => 'ds_content',
     ),
     'classes' => array(),
@@ -95,6 +97,8 @@ function gsb_feature_people_fpp_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
   );
   $export['field_collection_item|field_person_description|default'] = $ds_layout;
 
@@ -125,6 +129,8 @@ function gsb_feature_people_fpp_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
   );
   $export['fieldable_panels_pane|people|default'] = $ds_layout;
 

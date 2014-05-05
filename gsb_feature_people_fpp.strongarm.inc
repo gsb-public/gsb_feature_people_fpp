@@ -50,7 +50,7 @@ function gsb_feature_people_fpp_strongarm() {
         ),
         'title' => array(
           'default' => array(
-            'weight' => '3',
+            'weight' => '5',
             'visible' => FALSE,
           ),
         ),
@@ -104,9 +104,19 @@ function gsb_feature_people_fpp_strongarm() {
       'people_fpp' => array(
         'custom_settings' => FALSE,
       ),
+      'existing_node_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'phd_job_market_candidate' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'redirect' => array(
+          'weight' => '4',
+        ),
+      ),
       'display' => array(),
     ),
   );
