@@ -75,7 +75,8 @@ function gsb_feature_people_fpp_preprocess_entity(&$variables) {
     $person_content = reset($variables['content']['field_person_ref'][0]['node']);
 
     // Get visibility fields.
-    $display_fields = $fc_wrapper->field_person_fields_visibility->value();
+    $fpp_wrapper = entity_metadata_wrapper('fieldable_panels_pane', $fc_wrapper->value()->hostEntity());
+    $display_fields = $fpp_wrapper->field_person_fields_visibility->value();
     // For each field to display, set a variable to TRUE.
     foreach ($display_fields as $display_field) {
       $variables[_gsb_feature_people_fpp_visibility_var_keys($display_field)] = TRUE;

@@ -185,6 +185,57 @@ function gsb_feature_people_fpp_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'fieldable_panels_pane-people-field_person_fields_visibility'
+  $field_instances['fieldable_panels_pane-people-field_person_fields_visibility'] = array(
+    'bundle' => 'people',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 'photo',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'list_default',
+        'weight' => 7,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'fieldable_panels_pane',
+    'field_name' => 'field_person_fields_visibility',
+    'label' => 'Fields to show',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_buttons',
+      'weight' => -5,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'fieldable_panels_pane-people-field_persons_display_style'
   $field_instances['fieldable_panels_pane-people-field_persons_display_style'] = array(
     'bundle' => 'people',
@@ -286,6 +337,7 @@ function gsb_feature_people_fpp_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Display Style');
+  t('Fields to show');
   t('People');
   t('Person');
   t('Quote or Summary');
