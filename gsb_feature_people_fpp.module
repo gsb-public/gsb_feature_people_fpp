@@ -25,6 +25,121 @@ function gsb_feature_people_fpp_entity_info_alter(&$entity_info) {
 }
 
 /**
+ * Implements hook_fieldable_panels_pane_view().
+ */
+function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
+  $wrapper = entity_metadata_wrapper('fieldable_panels_pane', $entity);
+  if ($wrapper->getBundle() != 'people') {
+    return;
+  }
+
+  // Gather the visibility of fields.
+  $visibility = drupal_map_assoc($wrapper->field_person_fields_visibility->value());
+  $people = array();
+  // Loop through each person description field collection.
+  foreach ($wrapper->field_person_description as $person_id => $person_desc) {
+    // Build a row wrapper for each person.
+    $person_display = array(
+      '#type' => 'container',
+      '#attributes' => array(
+        'class' => array(
+          'person-row',
+        ),
+      ),
+    );
+    // Use the person referenced within the field collection.
+    $person_ref = $person_desc->field_person_ref;
+    // Add the photo first, directly into the row.
+    if (isset($visibility['photo']) && $photo = $person_ref->field_image_single_public->value()) {
+      $person_display['photo'] = array(
+        '#theme' => 'image_formatter',
+        '#item' => $photo,
+        '#image_style' => '170x170',
+        '#attributes' => array(
+          'class' => array(
+            'field-name-field-image-single-public',
+          ),
+        ),
+      );
+    }
+    // Build a wrapper for the fields, for easy positioning next to the photo.
+    $person_display['wrapper'] = array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('person-fpp-wrapper')),
+    );
+    // Denote if a photo was used.
+    if (!empty($photo)) {
+      $person_display['wrapper']['#attributes']['class'][] = 'use-photo';
+    }
+
+    // The person will always have a name.
+    $person_display['wrapper']['name']['#prefix'] = '<span class="person-name">';
+    $person_display['wrapper']['name']['#suffix'] = '</span>';
+    $person_display['wrapper']['name']['#markup'] = $person_ref->label();
+
+    // The rank and area should be combined with a comma, if both exist.
+    // Additionally, these fields do not appear on all person references, so use
+    // the explicit isset() check on the property to prevent exceptions.
+    $rank_and_area = NULL;
+    if (isset($visibility['rank']) && isset($person_ref->field_rank) && $rank = $person_ref->field_rank->value()) {
+      $rank_and_area[] = $rank;
+    }
+    if (isset($visibility['academic area']) && isset($person_ref->field_academic_area_single) && $area = $person_ref->field_academic_area_single->label()) {
+      $rank_and_area[] = $area;
+    }
+    if ($rank_and_area) {
+      $person_display['wrapper']['rank_and_area']['#prefix'] = '<div class="person-rank-and-area">';
+      $person_display['wrapper']['rank_and_area']['#suffix'] = '</div>';
+      $person_display['wrapper']['rank_and_area']['#markup'] = implode(', ', $rank_and_area);
+    }
+
+    // For the remaining fields, check before printing and wrap normally.
+    if ($position = $person_desc->field_person_title->value()) {
+      $person_display['wrapper']['position']['#prefix'] = '<div class="person-position">';
+      $person_display['wrapper']['position']['#suffix'] = '</div>';
+      $person_display['wrapper']['position']['#markup'] = $position;
+    }
+    if (isset($visibility['phone']) && $phone = $person_ref->field_phone->value()) {
+      $person_display['wrapper']['phone']['#prefix'] = '<div class="person-phone">';
+      $person_display['wrapper']['phone']['#suffix'] = '</div>';
+      $person_display['wrapper']['phone']['#markup'] = $phone;
+    }
+    if (isset($visibility['email']) && $email = $person_ref->field_email->value()) {
+      $person_display['wrapper']['email']['#prefix'] = '<div class="person-email">';
+      $person_display['wrapper']['email']['#suffix'] = '</div>';
+      $person_display['wrapper']['email']['#markup'] = '<a href="mailto:' . $email . '">' . t('Email') . '</a>';
+    }
+    if ($quote = $person_desc->field_body->value()) {
+      $person_display['wrapper']['quote']['#prefix'] = '<div class="person-quote">';
+      $person_display['wrapper']['quote']['#suffix'] = '</div>';
+      $person_display['wrapper']['quote']['#markup'] = $quote;
+    }
+
+    $people[$person_id] = $person_display;
+  }
+
+  // Build the entire collection of people, with the selected style as a class,
+  // and with the FPP title at the top.
+  $entity->content['gsb_feature_people_fpp'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array(
+        $wrapper->field_persons_display_style->value(),
+      ),
+    ),
+    'title' => array(
+      '#type' => 'container',
+      '#attributes' => array(
+        'class' => array(
+          'field-name-field-title',
+        ),
+      ),
+      '#children' => $wrapper->field_title->value(),
+    ),
+  ) + $people;
+}
+
+/**
  * Implements hook_fieldable_panels_pane_view_alter().
  */
 function gsb_feature_people_fpp_fieldable_panels_pane_view_alter(&$build, $entity_type) {
