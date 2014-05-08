@@ -42,34 +42,10 @@ function gsb_feature_people_fpp_strongarm() {
         ),
       ),
       'display' => array(
-        'people_fpp_view_entity_view_1' => array(
-          'default' => array(
-            'weight' => '1',
-            'visible' => TRUE,
-          ),
-        ),
         'title' => array(
           'default' => array(
-            'weight' => '5',
+            'weight' => '3',
             'visible' => FALSE,
-          ),
-        ),
-        'people_fpp_view_entity_view_2' => array(
-          'default' => array(
-            'weight' => '2',
-            'visible' => TRUE,
-          ),
-        ),
-        'people_fpp_view_list' => array(
-          'default' => array(
-            'weight' => '1',
-            'visible' => TRUE,
-          ),
-        ),
-        'people_fpp_view_grid' => array(
-          'default' => array(
-            'weight' => '2',
-            'visible' => TRUE,
           ),
         ),
       ),
