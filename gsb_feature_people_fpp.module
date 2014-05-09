@@ -73,9 +73,19 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
     }
 
     // The person will always have a name.
+    if ($person_ref->getBundle() == 'faculty') {
+      $uri = entity_uri($person_ref->type(), $person_ref->value());
+      $person_display['wrapper']['name'] = array(
+        '#type' => 'link',
+        '#title' => $person_ref->label(),
+        '#href' => $uri['path'],
+      );
+    }
+    else {
+      $person_display['wrapper']['name']['#markup'] = $person_ref->label();
+    }
     $person_display['wrapper']['name']['#prefix'] = '<div class="person-field person-name">';
     $person_display['wrapper']['name']['#suffix'] = '</div>';
-    $person_display['wrapper']['name']['#markup'] = $person_ref->label();
 
     // The rank and area should be combined with a comma, if both exist.
     // Additionally, these fields do not appear on all person references, so use
