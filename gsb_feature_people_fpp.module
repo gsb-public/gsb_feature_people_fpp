@@ -109,12 +109,12 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
       $person_display['wrapper']['position']['#suffix'] = '</div>';
       $person_display['wrapper']['position']['#markup'] = $position;
     }
-    if (isset($visibility['phone']) && $phone = $person_ref->field_phone->value()) {
+    if (isset($visibility['phone']) && isset($person_ref->field_phone) && $phone = $person_ref->field_phone->value()) {
       $person_display['wrapper']['phone']['#prefix'] = '<div class="person-field person-phone">';
       $person_display['wrapper']['phone']['#suffix'] = '</div>';
       $person_display['wrapper']['phone']['#markup'] = $phone;
     }
-    if (isset($visibility['email']) && $email = $person_ref->field_email->value()) {
+    if (isset($visibility['email']) && isset($person_ref->field_email) && $email = $person_ref->field_email->value()) {
       $person_display['wrapper']['email']['#prefix'] = '<div class="person-field person-email">';
       $person_display['wrapper']['email']['#suffix'] = '</div>';
       $person_display['wrapper']['email']['#markup'] = '<a href="mailto:' . $email . '">' . t('Email') . '</a>';

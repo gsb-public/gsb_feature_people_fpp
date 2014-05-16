@@ -190,11 +190,7 @@ function gsb_feature_people_fpp_field_default_field_instances() {
     'bundle' => 'people',
     'custom_add_another' => '',
     'custom_remove' => '',
-    'default_value' => array(
-      0 => array(
-        'value' => 'photo',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
