@@ -64,7 +64,7 @@ function gsb_feature_people_fpp_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'maxlength_js' => 500,
+        'maxlength_js' => '',
         'maxlength_js_enforce' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'maxlength_js_truncate_html' => 0,
@@ -210,7 +210,7 @@ function gsb_feature_people_fpp_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'fieldable_panels_pane',
     'field_name' => 'field_person_fields_visibility',
-    'label' => 'Fields to show',
+    'label' => 'Fields to display',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -327,7 +327,7 @@ function gsb_feature_people_fpp_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Display Style');
-  t('Fields to show');
+  t('Fields to display');
   t('People');
   t('Person');
   t('Quote or Summary');
