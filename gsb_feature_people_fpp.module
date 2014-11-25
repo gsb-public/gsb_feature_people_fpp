@@ -86,6 +86,11 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
     $person_display['wrapper']['name']['#prefix'] = '<div class="person-field person-name">';
     $person_display['wrapper']['name']['#suffix'] = '</div>';
 
+    // For alumni append the stanford degree
+    if ($person_ref->getBundle() == 'alumni' && isset($person_ref->field_stanford_degrees_single)) {
+      $person_display['wrapper']['name']['#markup'] .= ', ' . $person_ref->field_stanford_degrees_single->value();
+    }
+
     // The rank and area should be combined with a comma, if both exist.
     // Additionally, these fields do not appear on all person references, so use
     // the explicit isset() check on the property to prevent exceptions.
@@ -102,6 +107,18 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
       $person_display['wrapper']['rank_and_area']['#markup'] = implode(', ', $rank_and_area);
     }
 
+    if (isset($visibility['alumni title organization location']) ) {
+      if (isset($person_ref->field_title_position_single) && $title_position = $person_ref->field_title_position_single->value()) {
+        $person_display['wrapper']['title_position']['#prefix'] = '<div class="person-field person-alumni-title">';
+        $person_display['wrapper']['title_position']['#suffix'] = '</div>';
+        $person_display['wrapper']['title_position']['#markup'] = $title_position;
+      }
+      if (isset($person_ref->field_location) && $location = $person_ref->field_location->value()) {
+        $person_display['wrapper']['location']['#prefix'] = '<div class="person-field person-alumni-location">';
+        $person_display['wrapper']['location']['#suffix'] = '</div>';
+        $person_display['wrapper']['location']['#markup'] = $location;
+      }
+    }
     // For the remaining fields, check before printing and wrap normally.
     if ($position = $person_desc->field_person_title->value()) {
       $person_display['wrapper']['position']['#prefix'] = '<div class="person-field person-position">';
