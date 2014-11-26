@@ -106,7 +106,12 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
       $person_display['wrapper']['rank_and_area']['#suffix'] = '</div>';
       $person_display['wrapper']['rank_and_area']['#markup'] = implode(', ', $rank_and_area);
     }
-
+    // For the remaining fields, check before printing and wrap normally.
+    if ($position = $person_desc->field_person_title->value()) {
+      $person_display['wrapper']['position']['#prefix'] = '<div class="person-field person-position">';
+      $person_display['wrapper']['position']['#suffix'] = '</div>';
+      $person_display['wrapper']['position']['#markup'] = $position;
+    }
     if (isset($visibility['alumni title organization location']) ) {
       if (isset($person_ref->field_title_position_single) && $title_position = $person_ref->field_title_position_single->value()) {
         $person_display['wrapper']['title_position']['#prefix'] = '<div class="person-field person-alumni-title">';
@@ -118,12 +123,6 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
         $person_display['wrapper']['location']['#suffix'] = '</div>';
         $person_display['wrapper']['location']['#markup'] = $location;
       }
-    }
-    // For the remaining fields, check before printing and wrap normally.
-    if ($position = $person_desc->field_person_title->value()) {
-      $person_display['wrapper']['position']['#prefix'] = '<div class="person-field person-position">';
-      $person_display['wrapper']['position']['#suffix'] = '</div>';
-      $person_display['wrapper']['position']['#markup'] = $position;
     }
     if (isset($visibility['phone']) && isset($person_ref->field_phone) && $phone = $person_ref->field_phone->value()) {
       $person_display['wrapper']['phone']['#prefix'] = '<div class="person-field person-phone">';
