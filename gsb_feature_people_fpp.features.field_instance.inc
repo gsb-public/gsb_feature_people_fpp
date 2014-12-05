@@ -48,7 +48,7 @@ function gsb_feature_people_fpp_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_body',
-    'label' => 'Quote or Summary',
+    'label' => 'Summary or Description',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -330,7 +330,7 @@ function gsb_feature_people_fpp_field_default_field_instances() {
   t('Fields to display');
   t('People');
   t('Person');
-  t('Quote or Summary');
+  t('Summary or Description');
   t('Title');
 
   return $field_instances;
