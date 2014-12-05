@@ -72,24 +72,25 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
     }
 
     // The person will always have a name.
-    if ($person_ref->getBundle() == 'faculty') {
+    $suffix_degree = '';
+    if ($person_ref->getBundle() == 'faculty' || $person_ref->getBundle() == 'alumni') {
       $uri = entity_uri($person_ref->type(), $person_ref->value());
       $person_display['wrapper']['name'] = array(
         '#type' => 'link',
         '#title' => $person_ref->label(),
-        '#href' => $uri['path'],
+        '#href' => $uri['path']
       );
+      if (isset ($person_ref->field_stanford_degrees_single) && $person_ref->field_stanford_degrees_single->value()) {
+        $suffix_degree = ', ' . $person_ref->field_stanford_degrees_single->value();
+      }
     }
     else {
       $person_display['wrapper']['name']['#markup'] = $person_ref->label();
     }
     $person_display['wrapper']['name']['#prefix'] = '<div class="person-field person-name">';
-    $person_display['wrapper']['name']['#suffix'] = '</div>';
+    $person_display['wrapper']['name']['#suffix'] = $suffix_degree . '</div>';
 
-    // For alumni append the stanford degree
-    if ($person_ref->getBundle() == 'alumni' && isset($person_ref->field_stanford_degrees_single)) {
-      $person_display['wrapper']['name']['#markup'] .= ', ' . $person_ref->field_stanford_degrees_single->value();
-    }
+
 
     // The rank and area should be combined with a comma, if both exist.
     // Additionally, these fields do not appear on all person references, so use
