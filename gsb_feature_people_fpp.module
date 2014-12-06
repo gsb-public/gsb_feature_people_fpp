@@ -70,12 +70,21 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
     if (!empty($photo)) {
       $person_display['wrapper']['#attributes']['class'][] = 'use-photo';
     }
-
+    //  Wrapper for name, rank & academic area (for faculty), title, role or program, and position
+    $person_display['wrapper']['person_wrapper_title'] = array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('person-wrapper-name-title')),
+    );
+    //  Wrapper for alumni title and company, phone, and email
+    $person_display['wrapper']['person_wrapper_info'] = array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('person-wrapper-info')),
+    );
     // The person will always have a name.
     $suffix_degree = '';
     if ($person_ref->getBundle() == 'faculty' || $person_ref->getBundle() == 'alumni') {
       $uri = entity_uri($person_ref->type(), $person_ref->value());
-      $person_display['wrapper']['name'] = array(
+      $person_display['wrapper']['person_wrapper_title']['name'] = array(
         '#type' => 'link',
         '#title' => $person_ref->label(),
         '#href' => $uri['path']
@@ -85,10 +94,10 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
       }
     }
     else {
-      $person_display['wrapper']['name']['#markup'] = $person_ref->label();
+      $person_display['wrapper']['person_wrapper_title']['name']['#markup'] = $person_ref->label();
     }
-    $person_display['wrapper']['name']['#prefix'] = '<div class="person-field person-name">';
-    $person_display['wrapper']['name']['#suffix'] = $suffix_degree . '</div>';
+    $person_display['wrapper']['person_wrapper_title']['name']['#prefix'] = '<div class="person-name">';
+    $person_display['wrapper']['person_wrapper_title']['name']['#suffix'] = $suffix_degree . '</div>';
 
 
 
@@ -103,40 +112,40 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
       $rank_and_area[] = $area;
     }
     if ($rank_and_area) {
-      $person_display['wrapper']['rank_and_area']['#prefix'] = '<div class="person-field person-rank-and-area">';
-      $person_display['wrapper']['rank_and_area']['#suffix'] = '</div>';
-      $person_display['wrapper']['rank_and_area']['#markup'] = implode(', ', $rank_and_area);
+      $person_display['wrapper']['person_wrapper_title']['rank_and_area']['#prefix'] = '<div class="person-rank-and-area">';
+      $person_display['wrapper']['person_wrapper_title']['rank_and_area']['#suffix'] = '</div>';
+      $person_display['wrapper']['person_wrapper_title']['rank_and_area']['#markup'] = implode(', ', $rank_and_area);
     }
     // For the remaining fields, check before printing and wrap normally.
     if ($position = $person_desc->field_person_title->value()) {
-      $person_display['wrapper']['position']['#prefix'] = '<div class="person-field person-position">';
-      $person_display['wrapper']['position']['#suffix'] = '</div>';
-      $person_display['wrapper']['position']['#markup'] = $position;
+      $person_display['wrapper']['person_wrapper_title']['position']['#prefix'] = '<div class="person-position">';
+      $person_display['wrapper']['person_wrapper_title']['position']['#suffix'] = '</div>';
+      $person_display['wrapper']['person_wrapper_title']['position']['#markup'] = $position;
     }
     if (isset($visibility['alumni title organization location']) ) {
       if (isset($person_ref->field_title_position_single) && $title_position = $person_ref->field_title_position_single->value()) {
-        $person_display['wrapper']['title_position']['#prefix'] = '<div class="person-field person-alumni-title">';
-        $person_display['wrapper']['title_position']['#suffix'] = '</div>';
-        $person_display['wrapper']['title_position']['#markup'] = $title_position;
+        $person_display['wrapper']['person_wrapper_info']['title_position']['#prefix'] = '<div class="person-alumni-title">';
+        $person_display['wrapper']['person_wrapper_info']['title_position']['#suffix'] = '</div>';
+        $person_display['wrapper']['person_wrapper_info']['title_position']['#markup'] = $title_position;
       }
       if (isset($person_ref->field_location) && $location = $person_ref->field_location->value()) {
-        $person_display['wrapper']['location']['#prefix'] = '<div class="person-field person-alumni-location">';
-        $person_display['wrapper']['location']['#suffix'] = '</div>';
-        $person_display['wrapper']['location']['#markup'] = $location;
+        $person_display['wrapper']['person_wrapper_info']['location']['#prefix'] = '<div class="person-alumni-location">';
+        $person_display['wrapper']['person_wrapper_info']['location']['#suffix'] = '</div>';
+        $person_display['wrapper']['person_wrapper_info']['location']['#markup'] = $location;
       }
     }
     if (isset($visibility['phone']) && isset($person_ref->field_phone) && $phone = $person_ref->field_phone->value()) {
-      $person_display['wrapper']['phone']['#prefix'] = '<div class="person-field person-phone">';
-      $person_display['wrapper']['phone']['#suffix'] = '</div>';
-      $person_display['wrapper']['phone']['#markup'] = $phone;
+      $person_display['wrapper']['person_wrapper_info']['phone']['#prefix'] = '<div class="person-phone">';
+      $person_display['wrapper']['person_wrapper_info']['phone']['#suffix'] = '</div>';
+      $person_display['wrapper']['person_wrapper_info']['phone']['#markup'] = $phone;
     }
     if (isset($visibility['email']) && isset($person_ref->field_email) && $email = $person_ref->field_email->value()) {
-      $person_display['wrapper']['email']['#prefix'] = '<div class="person-field person-email">';
-      $person_display['wrapper']['email']['#suffix'] = '</div>';
-      $person_display['wrapper']['email']['#markup'] = '<a href="mailto:' . $email . '">' . t('Email') . '</a>';
+      $person_display['wrapper']['person_wrapper_info']['email']['#prefix'] = '<div class="person-email">';
+      $person_display['wrapper']['person_wrapper_info']['email']['#suffix'] = '</div>';
+      $person_display['wrapper']['person_wrapper_info']['email']['#markup'] = '<a href="mailto:' . $email . '">' . t('Email') . '</a>';
     }
     if ($quote = $person_desc->field_body->value()) {
-      $person_display['wrapper']['quote']['#prefix'] = '<div class="person-quote">';
+      $person_display['wrapper']['quote']['#prefix'] = '<div class="person-description">';
       $person_display['wrapper']['quote']['#suffix'] = '</div>';
       $person_display['wrapper']['quote']['#markup'] = $quote;
     }
