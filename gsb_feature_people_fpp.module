@@ -80,8 +80,7 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
       '#type' => 'container',
       '#attributes' => array('class' => array('person-wrapper-info')),
     );
-    // The person will always have a name.
-    $suffix_degree = '';
+    // The person will always have a name
     if ($person_ref->getBundle() == 'faculty' || $person_ref->getBundle() == 'alumni') {
       $uri = entity_uri($person_ref->type(), $person_ref->value());
       $person_display['wrapper']['person_wrapper_title']['name'] = array(
@@ -89,15 +88,20 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
         '#title' => $person_ref->label(),
         '#href' => $uri['path']
       );
+      // Append degree program if Alumnus includes it
       if (isset ($person_ref->field_stanford_degrees_single) && $person_ref->field_stanford_degrees_single->value()) {
-        $suffix_degree = ', ' . $person_ref->field_stanford_degrees_single->value();
+        $person_display['wrapper']['person_wrapper_title']['name'] = array(
+          '#type' => 'link',
+          '#title' => $person_ref->label() . ', ' . $person_ref->field_stanford_degrees_single->value(),
+          '#href' => $uri['path']
+        );
       }
     }
     else {
       $person_display['wrapper']['person_wrapper_title']['name']['#markup'] = $person_ref->label();
     }
     $person_display['wrapper']['person_wrapper_title']['name']['#prefix'] = '<div class="person-name">';
-    $person_display['wrapper']['person_wrapper_title']['name']['#suffix'] = $suffix_degree . '</div>';
+    $person_display['wrapper']['person_wrapper_title']['name']['#suffix'] = '</div>';
 
 
 
