@@ -46,6 +46,11 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
         ),
       ),
     );
+
+    if ($person_desc->field_person_ref->value() == null) {
+      continue;
+    }
+
     // Use the person referenced within the field collection.
     $person_ref = $person_desc->field_person_ref;
     // Add the photo first, directly into the row.
