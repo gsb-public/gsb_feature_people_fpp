@@ -82,7 +82,8 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
     );
     // The person will always have a name
     if ($person_ref->getBundle() == 'faculty' || $person_ref->getBundle() == 'alumni'
-       || $person_ref->getBundle() == 'phd_candidate' || $person_ref->getBundle() == 'msx_fellows') {
+       || $person_ref->getBundle() == 'phd_candidate' || $person_ref->getBundle() == 'msx_fellows'
+       || $person_ref->getBundle() == 'staff') {
       $uri = entity_uri($person_ref->type(), $person_ref->value());
       $person_display['wrapper']['person_wrapper_title']['name'] = array(
         '#type' => 'link',
