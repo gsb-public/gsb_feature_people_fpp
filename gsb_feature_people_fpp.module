@@ -31,7 +31,6 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
   if ($wrapper->getBundle() != 'people') {
     return;
   }
-
   // Gather the visibility of fields.
   $visibility = drupal_map_assoc($wrapper->field_person_fields_visibility->value());
   $people = array();
@@ -48,6 +47,7 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
     );
     // Use the person referenced within the field collection.
     $person_ref = $person_desc->field_person_ref;
+
     // Add the photo first, directly into the row.
     if (isset($visibility['photo']) && $photo = $person_ref->field_image_single_public->value()) {
       $person_display['photo'] = array(
@@ -123,6 +123,17 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
       $person_display['wrapper']['person_wrapper_title']['rank_and_area']['#markup'] = implode(', ', $rank_and_area);
     }
     // For the remaining fields, check before printing and wrap normally.
+      if (isset($visibility['title staff']) && isset($person_ref->field_title_position_unlimited) &&
+         $staff_title_position = $person_ref->field_title_position_unlimited->value()) {
+        $title_count = 0;
+        foreach ($staff_title_position as $staff_title) {
+          $person_display['wrapper']['person_wrapper_title']['staff_title_position'.$title_count]['#prefix'] = '<div class="person-staff-title-position-'.$title_count.'">';
+          $person_display['wrapper']['person_wrapper_title']['staff_title_position'.$title_count]['#suffix'] = '</div>';
+          $person_display['wrapper']['person_wrapper_title']['staff_title_position'.$title_count]['#markup'] = $staff_title;
+          $title_count++;
+        }
+      }
+
     if ($position = $person_desc->field_person_title->value()) {
       $person_display['wrapper']['person_wrapper_title']['position']['#prefix'] = '<div class="person-position">';
       $person_display['wrapper']['person_wrapper_title']['position']['#suffix'] = '</div>';
