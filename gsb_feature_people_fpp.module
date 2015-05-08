@@ -75,7 +75,7 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
       '#type' => 'container',
       '#attributes' => array('class' => array('person-wrapper-name-title')),
     );
-    //  Wrapper for alumni title and company, phone, and email
+    //  Wrapper for alumni title and company, staff title, phone, and email
     $person_display['wrapper']['person_wrapper_info'] = array(
       '#type' => 'container',
       '#attributes' => array('class' => array('person-wrapper-info')),
@@ -127,9 +127,9 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
       $title_count = 0;
       foreach ($person_ref->field_staff_item as $field_staff_title) {
         if (isset($field_staff_title->field_title_position_single) && $staff_title_position = $field_staff_title->field_title_position_single->value()) {
-          $person_display['wrapper']['person_wrapper_title']['staff_title_position'.$title_count]['#prefix'] = '<div class="person-staff-title-position-'.$title_count.'">';
-          $person_display['wrapper']['person_wrapper_title']['staff_title_position'.$title_count]['#suffix'] = '</div>';
-          $person_display['wrapper']['person_wrapper_title']['staff_title_position'.$title_count]['#markup'] = $staff_title_position;
+          $person_display['wrapper']['person_wrapper_info']['staff_title_position'.$title_count]['#prefix'] = '<div class="person-staff-title-position-'.$title_count.'">';
+          $person_display['wrapper']['person_wrapper_info']['staff_title_position'.$title_count]['#suffix'] = '</div>';
+          $person_display['wrapper']['person_wrapper_info']['staff_title_position'.$title_count]['#markup'] = $staff_title_position;
           $title_count++;
         }
       }
