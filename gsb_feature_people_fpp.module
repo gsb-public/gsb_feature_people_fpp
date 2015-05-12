@@ -123,7 +123,7 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
       $person_display['wrapper']['person_wrapper_title']['rank_and_area']['#markup'] = implode(', ', $rank_and_area);
     }
     // For the remaining fields, check before printing and wrap normally.
-    if (isset($visibility['title staff'])){
+    if (isset($visibility['title staff']) && $person_ref->getBundle() == 'staff'){
       $title_count = 0;
       foreach ($person_ref->field_staff_item as $field_staff_title) {
         if (isset($field_staff_title->field_title_position_single) && $staff_title_position = $field_staff_title->field_title_position_single->value()) {
