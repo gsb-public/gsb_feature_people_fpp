@@ -47,6 +47,13 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
     );
     // Use the person referenced within the field collection.
     $person_ref = $person_desc->field_person_ref;
+    try {
+      // test if person_ref is still valid, it may have been deleted
+      $person_ref->value();
+    }
+    catch (Exception $exception2) {
+      continue;
+    }
 
     // Add the photo first, directly into the row.
     if (isset($visibility['photo']) && $photo = $person_ref->field_image_single_public->value()) {
