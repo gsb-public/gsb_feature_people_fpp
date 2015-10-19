@@ -180,12 +180,15 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
 
   // Build the entire collection of people, with the selected style as a class,
   // and with the FPP title at the top.
+  $class = $wrapper->field_persons_display_style->value();
+  $classes = array($class);
+  if (stristr('-container', $class)) {
+    $classes[] = str_replace('-container', '', $class);
+  }
   $entity->content['gsb_feature_people_fpp'] = array(
     '#type' => 'container',
     '#attributes' => array(
-      'class' => array(
-        $wrapper->field_persons_display_style->value(),
-      ),
+      'class' => $classes,
     ),
     'title' => array(
       '#type' => 'container',
