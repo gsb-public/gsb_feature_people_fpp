@@ -66,6 +66,8 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
             'field-name-field-image-single-public',
           ),
         ),
+        '#prefix' => '<a href="/'.$person_ref->value()->path['alias'].'">',
+        '#suffix' => '</a>'
       );
     }
     // Build a wrapper for the fields, for easy positioning next to the photo.
