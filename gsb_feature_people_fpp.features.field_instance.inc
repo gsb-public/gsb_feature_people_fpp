@@ -10,7 +10,8 @@
 function gsb_feature_people_fpp_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_person_description-field_body'
+  // Exported field_instance:
+  // 'field_collection_item-field_person_description-field_body'.
   $field_instances['field_collection_item-field_person_description-field_body'] = array(
     'bundle' => 'field_person_description',
     'default_value' => NULL,
@@ -76,7 +77,8 @@ function gsb_feature_people_fpp_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'field_collection_item-field_person_description-field_person_ref'
+  // Exported field_instance:
+  // 'field_collection_item-field_person_description-field_person_ref'.
   $field_instances['field_collection_item-field_person_description-field_person_ref'] = array(
     'bundle' => 'field_person_description',
     'default_value' => NULL,
@@ -85,10 +87,11 @@ function gsb_feature_people_fpp_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
+        'module' => 'gsb_feature_existing_node_list_fpp',
         'settings' => array(
           'conditions' => array(),
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -143,7 +146,8 @@ function gsb_feature_people_fpp_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-people-field_person_description'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-people-field_person_description'.
   $field_instances['fieldable_panels_pane-people-field_person_description'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -185,7 +189,8 @@ function gsb_feature_people_fpp_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-people-field_person_fields_visibility'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-people-field_person_fields_visibility'.
   $field_instances['fieldable_panels_pane-people-field_person_fields_visibility'] = array(
     'bundle' => 'people',
     'custom_add_another' => '',
@@ -221,6 +226,7 @@ function gsb_feature_people_fpp_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'checkall' => FALSE,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_buttons',
@@ -229,7 +235,8 @@ function gsb_feature_people_fpp_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-people-field_persons_display_style'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-people-field_persons_display_style'.
   $field_instances['fieldable_panels_pane-people-field_persons_display_style'] = array(
     'bundle' => 'people',
     'default_value' => array(
@@ -275,7 +282,7 @@ function gsb_feature_people_fpp_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-people-field_title'
+  // Exported field_instance: 'fieldable_panels_pane-people-field_title'.
   $field_instances['fieldable_panels_pane-people-field_title'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
