@@ -121,7 +121,9 @@ function gsb_feature_people_fpp_fieldable_panels_pane_view($entity, $view) {
     // the explicit isset() check on the property to prevent exceptions.
     $rank_and_area = NULL;
     if (isset($visibility['rank']) && isset($person_ref->field_rank) && $rank = $person_ref->field_rank->value()) {
-      $rank_and_area[] = $rank;
+      $rank_field = field_info_field('field_rank');
+      $allowed_values = list_allowed_values($rank_field);
+      $rank_and_area[] = $allowed_values[$rank];
     }
     if (isset($visibility['academic area']) && isset($person_ref->field_academic_area_single) && $area = $person_ref->field_academic_area_single->label()) {
       $rank_and_area[] = $area;
